@@ -1,22 +1,20 @@
 import ReactDOM from 'react-dom'
 import './index.css'
-import books from './books'
 import Book from './Book'
+//CTRL + SHIFT + P to open simple browser
+//My-Book-List-react.js-
 
-
-
-function BookList(){
+function BookList() {
   return (
     <section className='booklist'>
-     {books.map((book) => {
-       return <Book key={book.id} {...book}/>
-     })}
+     <Book />
     </section>
   )
-}
+} 
 
-BookList.defaultProps ={
-  color: 'red'
+ 
+BookList.defaultProps = {
+  color: 'orange'
 }
 
 ReactDOM.render(<BookList/>, document.getElementById('root'))
