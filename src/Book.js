@@ -16,7 +16,7 @@ function Book() {
   return (
     <header className='header'>
         <h1>{title}</h1>
-        <Button color= {showAdd ? 'red' : 'springgreen'} text = {showAdd ? 'Close' : 'Add Book to List'} onClick = {onAdd}/>
+        <Button color= {showAdd ? 'black' : 'green'} text = {showAdd ? 'Close' : 'Add Book to List'} onClick = {onAdd}/>
     </header>
   )
 }
@@ -51,8 +51,8 @@ function Book() {
 
 //Add Task with random id
 const addBookkId = (someBook) => {
-  const id =Math.floor(Math.random() * 10000) + 1
-    // console.log(id)
+  const id =Math.floor(Math.random() * 10000) + 1;
+    console.log(someBook)
 
   const newTask = { id, ...someBook }
   setBook([...book, newTask])
@@ -98,7 +98,7 @@ const addBookkId = (someBook) => {
                 <h1>{title}</h1>
                 <h3>{author}</h3>
                 <h1>{}</h1>
-                    <button className="bttn" style={{ backgroundColor: 'yellow' }}
+                    <button className="bttn"
                         onClick={() => removeItem(id)}>
                         Delete
                     </button>

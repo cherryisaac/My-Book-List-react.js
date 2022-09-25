@@ -3,8 +3,7 @@ import { useState } from "react"
 const AddBook = ({onAdd}) => {
     const [text, setText] = useState('')
     const [author, setAuthor] = useState('')
-    const [reminder, setReminder] = useState(false)
-    
+    const [image, setImage] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -13,11 +12,11 @@ const AddBook = ({onAdd}) => {
             return
         }
 
-         onAdd({ text, author, reminder })
+         onAdd({ text, author, image })
  
         setText('')
         setAuthor('')
-        setReminder(false)
+        setImage('')
     } 
 
   return (
@@ -34,14 +33,14 @@ const AddBook = ({onAdd}) => {
           value={author} onChange = {(e) => 
             setAuthor(e.target.value)}/>
         </div>
-        <div className="form-control form-control-check">
-        <label>Set Reminder</label>
-        <input type = 'checkbox'  checked={reminder} value={reminder} 
+        <div className="form-control-image">
+        <label>Book Image</label>
+        <input type = 'file'  placeholder="Upload Image" value={image} 
         onChange = {(e) => 
-        setReminder(e.currentTarget.checked)}/>
+        setImage(e.target.value)}/>
         </div>
 
-        <input type='submit' value='Save Task' className="btn btn-block" />
+        <input type='submit' value='Save Book' className="bttn2 btttn btttn-dark" />
     </form>
   )
 }

@@ -62,31 +62,75 @@ section .booklist {
   grid-template-columns: 2;
   margin-bottom: 20px;
 }
-
+/* Add Book to List/Close button */
 .btn {
     display: flex;
-    /* justify-content: end; */
     margin-right: 0px;
     background: #000;
-      color: rgb(9, 9, 9);
-    border: 0.2mm solid;
+      color: rgb(242, 241, 241);
+    border: 0.5mm solid;
       padding: 10px 20px;
-      /* margin: 5px; */
-      border-radius: 5px;
+      /* border-radius: 5px; */
       cursor: pointer;
-      text-decoration: none;
       font-size: 15px;
       font-family: inherit;
 }
 
+/* Delete button */
 .bttn {
-  background: #000;
+  background: yellow;
   color: rgb(9, 9, 9);
   border: 0.4mm solid;
-  /* padding: 10px 20px; */
   border-radius: 5px;
   font-size: 15px;
   font-family: inherit;
+  cursor: pointer;
 }
+
+.bttn:hover {
+background: red;
+color: #000;
+border-radius: 5px;
+border-style: outset;
+}
+
+/* Submit button */
+.bttn2:hover { 
+  background: rgb(14, 231, 14);
+    color: rgb(16, 16, 16);
+    border: 0.4mm solid;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btttn{
+background: #000;
+color: #fff;
+  border: 0.4mm solid;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Form box wrapper */
+.add-form {
+  margin-bottom: 50px;
+  margin: 10px 0;
+    max-width: 275px;
+      margin: 10px auto;
+      overflow: auto;
+      min-height: 10px;
+      border: 1px solid rgb(6, 14, 22);
+      padding: 5px;
+      border-radius: 5px;
+}
+
+.form-control label {
+  display: block;
+}
+
 
 
