@@ -7,15 +7,13 @@ import React from 'react'
 function Book() {
 
  const Button = ({color, text, onClick}) => {
-   
   return (<button onClick={onClick} 
     style={{backgroundColor: color}} 
     className="btn">{text} </button>)
 }  
-  const Header = ({title, onAdd, showAdd}) => {
+  const Header = ({ onAdd, showAdd }) => {
   return (
     <header className='header'>
-        <h1>{title}</h1>
         <Button color= {showAdd ? 'black' : 'green'} text = {showAdd ? 'Close' : 'Add Book to List'} onClick = {onAdd}/>
     </header>
   )
@@ -56,45 +54,28 @@ const addBookkId = (someBook) => {
 
   const newTask = { id, ...someBook }
   setBook([...book, newTask])
-}
+  }
 
-//   const toggleButton = (id) => {
-//      setTasks(tasks.map((task) => task.id === id ?
-//     { ...task, reminder : !task.reminder } : task))
-//     setBook(book.map((someBook) => someBook.id === id ?
-//     {...book}
-//   }
-
-  // return (
-  // <article className='book'>
-  //    <div key={id} >
-  //               <h1>{}</h1>
-  //               <img src={img} alt="" />
-  //               <h1>{title}</h1>
-  //               <h3>{author}</h3>
-  //                 </div>
-  //               </article>
-  // )
-  
-
+  const toggleBook = (id) => {
+     setBook(book.map((books) => books.id === id ?
+    { ...books, img : !books.img } : books))
+    // console.log(id)
+  }
   
   return (
   <article className='book'>
     <Header onAdd={() => setShowBook(!showBook)}
       showAdd={showBook} />
-      {showBook && <AddBook onAdd = {addBookkId}/>}
+      {showBook && <AddBook onAdd = {addBookkId} />}
         {book.map((booking) => {
           
            const {id, img, title, author} = booking;
            
-            return (<>
+            return (
+            <React.Fragment>
             <div key={id} id= 'container'>
-              <div>
-                {/* <button type="button" style={{backgroundColor: 'springgreen'}} 
-         onClick={()=> book}>View Info</button> */}
-              </div>
                 <h1>{}</h1>
-                <img src={img} alt="" />
+                <img src={img} alt=""/>
                 <h1>{title}</h1>
                 <h3>{author}</h3>
                 <h1>{}</h1>
@@ -102,8 +83,8 @@ const addBookkId = (someBook) => {
                         onClick={() => removeItem(id)}>
                         Delete
                     </button>
-                    </div>
-                      </>
+            </div>
+            </React.Fragment>
             ) })}
   </article>
   ) 

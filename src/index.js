@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import Book from './Book'
 //CTRL + SHIFT + P to open simple browser
-//My-Book-List-react.js-
+//My-Book-List-react.js
 
 function BookList() {
   return (
@@ -12,7 +12,6 @@ function BookList() {
   )
 } 
 
- 
 BookList.defaultProps = {
   color: 'orange'
 }

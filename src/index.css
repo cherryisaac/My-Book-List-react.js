@@ -96,8 +96,8 @@ border-style: outset;
 
 /* Submit button */
 .bttn2:hover { 
-  background: rgb(14, 231, 14);
-    color: rgb(16, 16, 16);
+  background: rgb(11, 126, 11);
+    color: rgb(230, 230, 230);
     border: 0.4mm solid;
     border-radius: 5px;
     font-size: 15px;

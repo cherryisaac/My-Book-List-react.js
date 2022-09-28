@@ -7,12 +7,11 @@ const AddBook = ({onAdd}) => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        if(!text){
-            alert('Please add a title')
-            return
-        }
+        !text ? alert('Please add a title') :
+        !author ? alert('Please add an author') :
+        !image ? alert('Please select an image') :
 
-         onAdd({ text, author, image })
+        onAdd({ text, image, author })
  
         setText('')
         setAuthor('')
