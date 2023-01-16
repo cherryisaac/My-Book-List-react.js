@@ -131,20 +131,60 @@ color: #fff;
   color: rgb(0, 0, 0);
   font-family: Italic;
   font-size: 20px;
-  /* overflow: auto; */
+  overflow: auto;
   border: 1px solid rgb(0, 0, 0);
-  padding: 5px;
+  padding: 10px;
   display: grid;
-  grid-template-columns: 500px;
+  grid-template-columns: 185px;
   grid-template-rows: auto;
   grid-template-areas: 
   'desc';
   box-sizing: border-box;
-  width: 55%;
+  width: 21%;
 }
 
 .form-control label {
   display: block;
+}
+
+.flip-animation {
+  transition: transform 0.8s;
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(90deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.flip {
+  animation: flip 0.8s;
+}
+
+.flip-animation {
+  backface-visibility: hidden;
+}
+
+@keyframes flip2 {
+  from {
+    transform: rotateY(90deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.flip2 {
+  animation: flip 0.5s;
+}
+
+.flip2-animation {
+  backface-visibility: hidden;
 }
 
 

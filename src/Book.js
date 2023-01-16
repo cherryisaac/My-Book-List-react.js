@@ -41,7 +41,7 @@ function Book() {
   img: 'https://images-na.ssl-images-amazon.com/images/I/619Gn-+VNQL._AC_UL302_SR302,200_.jpg',
   title: 'How to Win Friends & Influence People',
   author: 'Dale Carnegie',
-  description: 'This book teaches you countless principles to become a likable person, handle your relationships well, win others over and help them change their behavior without being intrusiv'
+  description: 'This book teaches you countless principles to become a likable person, handle your relationships well, win others over and help them change their behavior without being intrusive.'
 }
 ])
 
@@ -72,17 +72,18 @@ const addBookkId = (someBook) => {
       {showBook && <AddBook onAdd = {addBookkId} />}
         {book.map((booking) => {
           
-           const {id, img, title, author, descriptionVisible} = booking;
+           const {id, img, title, author, description, descriptionVisible} = booking;
            
             return (
             <React.Fragment>
             <div key={id} id= 'container'>
                 <h1>{}</h1>
-                <img src={img} onClick={()=> toggleBook(id)} alt=""/>
+                {descriptionVisible ? <p className="description flip2" onClick={()=>toggleBook(id)}>{description}</p> :
+                 <img className="flip" src={img} onClick={()=> toggleBook(id)} alt=""/>}
                 <h1>{title}</h1>
                 <h3>{author}</h3>
                 <h1>{}</h1>
-                 {descriptionVisible && <h1 className="description"><span >{booking.description}</span></h1>}
+                 {/* {descriptionVisible && <h1 className="description"><span >{booking.description}</span></h1>} */}
                     <button className="bttn"
                         onClick={() => removeItem(id)}>
                         Delete
