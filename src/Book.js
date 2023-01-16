@@ -27,18 +27,21 @@ function Book() {
   id: 1,
   img: 'https://images-na.ssl-images-amazon.com/images/I/91-EIJiYneL._AC_UL604_SR604,400_.jpg',
   title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
-  author: 'James Clear'
+  author: 'James Clear',
+  description: 'Atomic Habits (2018) provides a practical and proven framework for creating good habits and shedding bad ones. Drawing on scientific research and real-life examples, it shows how tiny changes in behavior can result in the formation of new habits and help you achieve big things.'
 }, {
   id: 2,
   img: 'https://images-na.ssl-images-amazon.com/images/I/41QmmZs4UxL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
   title: 'Life Force: How New Breakthroughs in Precision Medicine Can Transform the Quality of Your Life & Those You Love',
-  author: 'Tony Robbins'
+  author: 'Tony Robbins',
+  description: 'This is a book for everyone, from peak performance athletes, to the average person who wants to increase their energy and strength, to those looking for healing. Life Force provides answers that can transform and even save your life, or that of someone you love.'
 },
  {
    id: 3,
   img: 'https://images-na.ssl-images-amazon.com/images/I/619Gn-+VNQL._AC_UL302_SR302,200_.jpg',
   title: 'How to Win Friends & Influence People',
-  author: 'Dale Carnegie'
+  author: 'Dale Carnegie',
+  description: 'This book teaches you countless principles to become a likable person, handle your relationships well, win others over and help them change their behavior without being intrusiv'
 }
 ])
 
@@ -58,7 +61,7 @@ const addBookkId = (someBook) => {
 
   const toggleBook = (id) => {
      setBook(book.map((books) => books.id === id ?
-    { ...books, img : !books.img } : books))
+    { ...books, descriptionVisible : !books.descriptionVisible } : books))
     // console.log(id)
   }
   
@@ -69,16 +72,17 @@ const addBookkId = (someBook) => {
       {showBook && <AddBook onAdd = {addBookkId} />}
         {book.map((booking) => {
           
-           const {id, img, title, author} = booking;
+           const {id, img, title, author, descriptionVisible} = booking;
            
             return (
             <React.Fragment>
             <div key={id} id= 'container'>
                 <h1>{}</h1>
-                <img src={img} alt=""/>
+                <img src={img} onClick={()=> toggleBook(id)} alt=""/>
                 <h1>{title}</h1>
                 <h3>{author}</h3>
                 <h1>{}</h1>
+                 {descriptionVisible && <h1 className="description"><span >{booking.description}</span></h1>}
                     <button className="bttn"
                         onClick={() => removeItem(id)}>
                         Delete

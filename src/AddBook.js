@@ -4,6 +4,7 @@ const AddBook = ({onAdd}) => {
     const [title, settitle] = useState('')
     const [author, setAuthor] = useState('')
     const [img, setImage] = useState('')
+    const [description, setDescription] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -11,11 +12,12 @@ const AddBook = ({onAdd}) => {
         !author ? alert('Please add an author') :
         !img ? alert('Please select an img') :
 
-        onAdd({ title, author, img })
+        onAdd({ title, author, img, description })
  
         settitle('')
         setAuthor('')
         setImage('')
+        setDescription('')
     } 
 
   return (
@@ -31,6 +33,12 @@ const AddBook = ({onAdd}) => {
         <input type = 'title' placeholder="Add the author"
           value={author} onChange = {(e) => 
             setAuthor(e.target.value)}/>
+        </div>
+         <div className="form-control">
+        <label>Description</label>
+        <textarea placeholder="Add a description (optional)"
+          value={description} onChange = {(e) => 
+            setDescription(e.target.value)}/>
         </div>
         <div className="form-control-img">
     <label>Book Image</label>

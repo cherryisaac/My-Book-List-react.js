@@ -1,10 +1,10 @@
 My Booklist by Isaac Cherry
 
 Functions:
-
 - Can add books
 - Can delete books
+- Can view the description of a book (if it has one) by clicking the book's image
+- Option to add a description to a book when adding books
 
 Bugs:
-
-- When adding books only the author's name is added while the title and image get ignored. (Everything logs properly though)
+- None
