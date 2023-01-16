@@ -1,19 +1,19 @@
 import { useState } from "react"
 
 const AddBook = ({onAdd}) => {
-    const [text, setText] = useState('')
+    const [title, settitle] = useState('')
     const [author, setAuthor] = useState('')
-    const [image, setImage] = useState('')
+    const [img, setImage] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
-        !text ? alert('Please add a title') :
+        !title ? alert('Please add a title') :
         !author ? alert('Please add an author') :
-        !image ? alert('Please select an image') :
+        !img ? alert('Please select an img') :
 
-        onAdd({ text, image, author })
+        onAdd({ title, author, img })
  
-        setText('')
+        settitle('')
         setAuthor('')
         setImage('')
     } 
@@ -22,23 +22,22 @@ const AddBook = ({onAdd}) => {
     <form className="add-form" onSubmit={onSubmit}>
         <div className="form-control">
         <label>Book Name</label>
-        <input type = 'text' placeholder="Add book name" 
-        value={text} onChange = {(e) => 
-        setText(e.target.value)}/>
+        <input type = 'title' placeholder="Add book name" 
+        value={title} onChange = {(e) => 
+        settitle(e.target.value)}/>
         </div>
         <div className="form-control">
         <label>Author</label>
-        <input type = 'text' placeholder="Add the author"
+        <input type = 'title' placeholder="Add the author"
           value={author} onChange = {(e) => 
             setAuthor(e.target.value)}/>
         </div>
-        <div className="form-control-image">
-        <label>Book Image</label>
-        <input type = 'file'  placeholder="Upload Image" value={image} 
-        onChange = {(e) => 
-        setImage(e.target.value)}/>
-        </div>
-
+        <div className="form-control-img">
+    <label>Book Image</label>
+    <input type="file" placeholder="Upload Image" onChange={e => 
+      setImage(URL.createObjectURL(e.target.files[0]))} />
+    <img src={img} alt="Uploaded Image" height="200" width="200" />
+      </div>
         <input type='submit' value='Save Book' className="bttn2 btttn btttn-dark" />
     </form>
   )
