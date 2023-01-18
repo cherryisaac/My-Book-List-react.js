@@ -5,7 +5,7 @@ import React from 'react'
 
 
 function Book() {
-
+//Add Book to List 
  const Button = ({color, text, onClick}) => {
   return (<button onClick={onClick} 
     style={{backgroundColor: color}} 
@@ -17,6 +17,15 @@ function Book() {
         <Button color= {showAdd ? 'black' : 'green'} text = {showAdd ? 'Close' : 'Add Book to List'} onClick = {onAdd}/>
     </header>
   )
+}
+
+//Theme Button
+const [theme, setTheme] = useState("Dark Theme");
+const [isDark, setIsDark] = useState(true);
+
+const handleThemeChange = () => {
+  setIsDark(!isDark);
+  setTheme(theme === "Dark Theme" ? "Light Theme" : "Dark Theme");
 }
 
   //Hide book add by default (useState set to false)
@@ -66,10 +75,17 @@ const addBookkId = (someBook) => {
   }
   
   return (
-  <article className='book'>
+  <article className='book' style={{backgroundColor: !isDark ? "black" : "white"}}>
     <Header onAdd={() => setShowBook(!showBook)}
       showAdd={showBook} />
       {showBook && <AddBook onAdd = {addBookkId} />}
+      <div className={`theme ${isDark ? "dark" : "light"}`} >
+        <p className="slider-text">{theme}</p>
+        <label class="switch">
+          <input type="checkbox" name="Dark Theme" onChange={handleThemeChange} checked={isDark}/>
+          <span className="slider round"></span>
+        </label>
+      </div>
         {book.map((booking) => {
           
            const {id, img, title, author, description, descriptionVisible} = booking;
@@ -88,6 +104,7 @@ const addBookkId = (someBook) => {
                         onClick={() => removeItem(id)}>
                         Delete
                     </button>
+                    
             </div>
             </React.Fragment>
             ) })}
