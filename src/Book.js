@@ -54,6 +54,15 @@ const handleThemeChange = () => {
 }
 ])
 
+const [backgroundImage, setBackgroundImage] = useState("image.png");
+
+const changeBackground = () => {
+  setBackgroundImage("stars-galaxy.gif");
+}
+
+const imagePath = !isDark ? "../src/Images/stars-galaxy.gif" : 
+".../src/Imagesimage.png";
+
 //To delete a book
   const removeItem = (id) => {
      setBook(book.filter((someBook) => someBook.id !== id))
@@ -75,12 +84,12 @@ const addBookkId = (someBook) => {
   }
   
   return (
-  <article className='book' style={{backgroundColor: !isDark ? "black" : "white"}}>
+  <article className={`book ${isDark ? 'dark' : 'light'}`} style={{color: !isDark ? "white" : "black"}}>
     <Header onAdd={() => setShowBook(!showBook)}
       showAdd={showBook} />
       {showBook && <AddBook onAdd = {addBookkId} />}
-      <div className={`theme ${isDark ? "dark" : "light"}`} >
-        <p className="slider-text">{theme}</p>
+      <div className={`theme ${isDark ? "dark" : "white"}`} >
+        <p className="slider-text">{}</p>
         <label class="switch">
           <input type="checkbox" name="Dark Theme" onChange={handleThemeChange} checked={isDark}/>
           <span className="slider round"></span>
@@ -96,7 +105,7 @@ const addBookkId = (someBook) => {
                 <h1>{}</h1>
                 {descriptionVisible ? <p className="description flip2" onClick={()=>toggleBook(id)}>{description}</p> :
                  <img className="flip" src={img} onClick={()=> toggleBook(id)} alt=""/>}
-                <h1>{title}</h1>
+                <h1 style={{color: !isDark ? "white" : "black"}}>{title}</h1>
                 <h3>{author}</h3>
                 <h1>{}</h1>
                  {/* {descriptionVisible && <h1 className="description"><span >{booking.description}</span></h1>} */}
