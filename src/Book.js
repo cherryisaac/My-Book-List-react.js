@@ -34,6 +34,7 @@ const handleThemeChange = () => {
   //For changing state such as deleting a book
   const [book, setBook] = useState([{
   id: 1,
+  //https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlkk-L1KiG7ca0hK9_uEefpx3f5KhI2E4h7w&usqp=CAU
   img: 'https://images-na.ssl-images-amazon.com/images/I/91-EIJiYneL._AC_UL604_SR604,400_.jpg',
   title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
   author: 'James Clear',
@@ -84,7 +85,7 @@ const addBookkId = (someBook) => {
   }
   
   return (
-  <article className={`book ${isDark ? 'dark' : 'light'}`} style={{color: !isDark ? "white" : "black"}}>
+  <article className={`book ${isDark ? 'dark' : 'light'}`}>
     <Header onAdd={() => setShowBook(!showBook)}
       showAdd={showBook} />
       {showBook && <AddBook onAdd = {addBookkId} />}
@@ -100,13 +101,16 @@ const addBookkId = (someBook) => {
            const {id, img, title, author, description, descriptionVisible} = booking;
            
             return (
-            <React.Fragment>
+            <React.Fragment >
             <div key={id} id= 'container'>
                 <h1>{}</h1>
-                {descriptionVisible ? <p className="description flip2" onClick={()=>toggleBook(id)}>{description}</p> :
-                 <img className="flip" src={img} onClick={()=> toggleBook(id)} alt=""/>}
-                <h1 style={{color: !isDark ? "white" : "black"}}>{title}</h1>
-                <h3>{author}</h3>
+                {descriptionVisible ? <p className="description flip2" style={{color: !isDark ? "rgb(0, 255, 255, 0.9)" : "black", fontWeight: !isDark ? 'bold' : "inherit",
+                borderColor: !isDark ? "white" : "black", backgroundColor: !isDark ? "rgb(0, 0, 0, 0.7)" : "rgb(255, 255, 255, 0.8)"}} 
+                onClick={()=>toggleBook(id)}>{description}</p> :
+                 <img className="flip" src={img}  onClick={()=> toggleBook(id)} alt="" />}
+                <h1 style={{color: !isDark ? "white" : "black", textShadow: !isDark ? "0 0 3px #FF0000, 0 0 5px #0000FF" : ""}}>{title}</h1>
+                <h3 style={{color: !isDark ? "coral" : "black", fontFamily: !isDark ? "fantasy" : "",
+              textShadow: !isDark ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black" : ""}}>{author}</h3>
                 <h1>{}</h1>
                  {/* {descriptionVisible && <h1 className="description"><span >{booking.description}</span></h1>} */}
                     <button className="bttn"

@@ -223,13 +223,12 @@ color: #fff;
 .dark {
   /* background-color: black; */
   color: rgb(0, 0, 0);
-  
-  
 }
 
 .light {
   /* background-color: white; */
-  color: rgb(255, 255, 255);
+  border: 1px solid #21e2f3;
+  /* color: rgb(255, 255, 255); */
   background-image: url("../src/Images/blue-fire.gif");
   background-size: cover;
   background-position:bottom;
