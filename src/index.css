@@ -9,14 +9,16 @@
   border-radius: 1px;
 }
 
-body, img {
-   /* even spacing of blocks */
+
+body {
   padding: 0px; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-image: url("../src/Images/image.png");
   background-size: contain;
 }
+
+
 
 /* Title style */
 h1 {
@@ -107,6 +109,8 @@ background: red;
 color: #000;
 border-radius: 5px;
 border-style: outset;
+border: 0.5mm solid;
+font-weight:bolder;
 }
 
 /* Submit button */
@@ -220,18 +224,79 @@ color: #fff;
   margin-top: -45px;
 }
 
+/* default colors */
 .dark {
   /* background-color: black; */
   color: rgb(0, 0, 0);
 }
 
+/* Bg and text color change on button press*/
 .light {
   /* background-color: white; */
   border: 1px solid #21e2f3;
-  /* color: rgb(255, 255, 255); */
+  color: rgb(255, 255, 255);
   background-image: url("../src/Images/blue-fire.gif");
   background-size: cover;
   background-position:bottom;
+}
+
+/* Form color change on button press*/
+.light > .add-form {
+  border: 1px solid #21e2f3;
+}
+
+/* Delete button orientation on theme switch */
+.bttn.light {
+  background: #8b0661;
+  color: #bab4b4;
+  font-size: 15;
+  font-weight: bolder;
+  background-position: top;
+  border: 0.4mm solid;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.bttn.light:hover {
+  background: #de109d;
+  color: #ffffff;
+  font-size: 15;
+  font-weight: bolder;
+  background-position: top;
+  border: 0.4mm solid;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn.dark {
+  display: flex;
+    margin-right: 0px;
+    background: #000;
+    color: rgb(242, 241, 241);
+    border: 0.5mm solid;
+    padding: 10px 20px;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.btn.light {
+  display: flex;
+    margin-right: 0px;
+    background: rgb(255, 0, 0);
+    color: rgb(242, 241, 241);
+    border: 0.5mm solid;
+    padding: 10px 20px;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    font-size: 15px;
+    font-family: inherit;
+  border-color: #21e2f3;
 }
 
 /* Hide default HTML checkbox */
