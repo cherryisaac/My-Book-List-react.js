@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/My-Book-List-react.js/static/css/main.bf9aa3ea.css",
+    "main.js": "/My-Book-List-react.js/static/js/main.3fdc5454.js",
+    "static/media/blue-fire.gif": "/My-Book-List-react.js/static/media/blue-fire.ac2be4d2d81217f0abe9.gif",
+    "static/media/image.png": "/My-Book-List-react.js/static/media/image.37d29bf5c6046b69edb6.png",
+    "index.html": "/My-Book-List-react.js/index.html",
+    "main.bf9aa3ea.css.map": "/My-Book-List-react.js/static/css/main.bf9aa3ea.css.map",
+    "main.3fdc5454.js.map": "/My-Book-List-react.js/static/js/main.3fdc5454.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf9aa3ea.css",
+    "static/js/main.3fdc5454.js"
+  ]
+}
