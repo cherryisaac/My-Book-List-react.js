@@ -10,13 +10,14 @@
   --black: #000;
 
   --slider: .4s;
+  --cursor: pointer;
+  --align: center;
 }
 
 .header {
-  border: 1px rgb(0, 0, 0);
+  border: 1px var(--black);
   border-radius: 1px;
 }
-
 
 body {
   padding: 0px; 
@@ -26,13 +27,12 @@ body {
   background-size: contain;
 }
 
-
 /* Title style */
 h1 {
   font-family:Georgia, 'Times New Roman', Times, serif ;
   font-size: 20px;
-  justify-content: center;
-  text-align: center;
+  justify-content: var(--align);
+  text-align: var(--align);
   margin-bottom: 10px;
   width: 40%;
 }
@@ -52,7 +52,7 @@ h3 {
   display: grid;
   gap: 40%;
   justify-content: space-evenly;
-  text-align: center;
+  text-align: var(--align);
   /* margin-block: 20px; */
 }
 
@@ -89,11 +89,11 @@ div .booklist {
     display: flex;
     margin-right: 0px;
     background: var(--black);
-      color: rgb(242, 241, 241);
+      color: var(--white);
     border: 0.5mm solid;
       padding: 10px 20px;
       /* border-radius: 5px; */
-      cursor: pointer;
+      cursor: var(--cursor);
       font-size: 15px;
       font-family: inherit;
 }
@@ -101,12 +101,12 @@ div .booklist {
 /* Delete button */
 .bttn {
   background: yellow;
-  color: rgb(9, 9, 9);
+  color: var(--black);
   border: 0.4mm solid;
   border-radius: 5px;
   font-size: 15px;
   font-family: inherit;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
 
 .bttn:hover {
@@ -121,12 +121,12 @@ font-weight:bolder;
 /* Submit button */
 .bttn2:hover { 
   background: rgb(11, 126, 11);
-    color: rgb(230, 230, 230);
+    color: var(--white);
     border: 0.4mm solid;
     border-radius: 5px;
     font-size: 15px;
     font-family: inherit;
-    cursor: pointer;
+    cursor: var(--cursor);
 }
 
 .btttn{
@@ -136,7 +136,7 @@ color: var(--white);
   border-radius: 5px;
   font-size: 15px;
   font-family: inherit;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
 
 /* Form box wrapper */
@@ -165,6 +165,79 @@ color: var(--white);
   'desc';
   box-sizing: border-box;
   width: 19%;
+  text-align: var(--align);
+}
+
+@media(max-width: 1180px) {
+  .description {
+  font-family: Italic;
+  font-size: 20px;
+  overflow: auto;
+  border: 1px solid var(--white);
+  padding: 10px;
+  display: flex;
+  grid-template-columns: 185px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'desc';
+  box-sizing: border-box;
+  width: 25%;
+  text-align: var(--align);
+}
+}
+
+@media(max-width: 900px) {
+  .description {
+  font-family: Italic;
+  font-size: 20px;
+  overflow: auto;
+  border: 1px solid var(--white);
+  padding: 10px;
+  display: flex;
+  grid-template-columns: 185px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'desc';
+  box-sizing: border-box;
+  width: 30%;
+  text-align: var(--align);
+}
+}
+
+@media(max-width: 700px) {
+  .description {
+  font-family: Italic;
+  font-size: 20px;
+  overflow: auto;
+  border: 1px solid var(--white);
+  padding: 10px;
+  display: flex;
+  grid-template-columns: 185px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'desc';
+  box-sizing: border-box;
+  width: 40%;
+  text-align: var(--align);
+}
+}
+
+@media(max-width: 450px) {
+  .description {
+  font-family: Italic;
+  font-size: 20px;
+  overflow: auto;
+  border: 1px solid var(--white);
+  padding: 10px;
+  display: flex;
+  grid-template-columns: 185px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'desc';
+  box-sizing: border-box;
+  width: 55%;
+  text-align: var(--align);
+}
 }
 
 .form-control label {
@@ -260,7 +333,7 @@ color: var(--white);
     border-radius: 5px;
     font-size: 15px;
     font-family: inherit;
-    cursor: pointer;
+    cursor: var(--cursor);
 }
 
 .bttn.light:hover {
@@ -273,7 +346,7 @@ color: var(--white);
   border-radius: 5px;
   font-size: 15px;
   font-family: inherit;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
 
 .btn.dark {
@@ -284,7 +357,7 @@ color: var(--white);
     border: 0.5mm solid;
     padding: 10px 20px;
     /* border-radius: 5px; */
-    cursor: pointer;
+    cursor: var(--cursor);
     font-size: 15px;
     font-family: inherit;
 }
@@ -297,7 +370,7 @@ color: var(--white);
     border: 0.5mm solid;
     padding: 10px 20px;
     /* border-radius: 5px; */
-    cursor: pointer;
+    cursor: var(--cursor);
     font-size: 15px;
     font-family: inherit;
   border-color: var(--cyan);
@@ -313,7 +386,7 @@ color: var(--white);
 /* The slider */
 .slider {
   position: absolute;
-  cursor: pointer;
+  cursor: var(--cursor);
   top: 0;
   left: 0;
   right: 0;
