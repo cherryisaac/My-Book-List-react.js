@@ -13,13 +13,13 @@ function Book() {
   const Header = ({ onAdd, showAdd }) => {
   return (
     <header className='header'  >
-        <Button  color= {showAdd ? 'black' : 'green'} text = {showAdd ? 'Close' : 'Add Book to List'} onClick = {onAdd}/>
+        <Button  color= {showAdd ? 'black' : 'green'} 
+        text = {showAdd ? 'Close' : 'Add Book to List'} onClick = {onAdd}/>
     </header>
   )
 }
 
-//Theme Button
-const [theme, setTheme] = useState("Dark Theme");
+
 //Prompt to change theme
 const [isDark, setIsDark] = useState(true);
 
@@ -57,7 +57,7 @@ const handleThemeChange = () => {
 }
 ])
 
-//Main Bookcase background change...not sure how to make it work correctly
+// Main Bookcase background change...not sure how to make it work correctly
 const [backgroundImage, setBackgroundImage] = useState("image.png");
 
   function handleChangeBackground() {
@@ -87,19 +87,19 @@ const addBookkId = (someBook) => {
   }
   
   return (
-  <article className={`book ${isDark ? 'dark' : 'light'}`} >
+  <div className='booklist'>
+    <article className={`book ${isDark ? 'dark' : 'light'}`} >
     <Header onAdd={() => setShowBook(!showBook)}
       showAdd={showBook} />
       {showBook && <AddBook onAdd = {addBookkId} />}
       <div className={`theme ${isDark ? "dark" : "white"}`} >
         <p className="slider-text">{}</p>
-        <label class="switch">
+        <label className="switch">
           <input type="checkbox" name="Dark Theme" onChange={handleThemeChange} checked={isDark}/>
           <span className="slider round"></span>
         </label>
       </div>
         {book.map((booking) => {
-          
            const {id, img, title, author, description, descriptionVisible} = booking;
            
             return (
@@ -115,16 +115,15 @@ const addBookkId = (someBook) => {
                 <h3 style={{color: !isDark ? "coral" : "black", fontFamily: !isDark ? "fantasy" : "",
               textShadow: !isDark ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black" : ""}}>{author}</h3>
                 <h1>{}</h1>
-                 {/* {descriptionVisible && <h1 className="description"><span >{booking.description}</span></h1>} */}
                   <button className={`bttn ${isDark ? 'dark' : 'light'}`} 
                         onClick={() => removeItem(id)}>
                         Delete
-                    </button>
-                    
+                  </button>
             </div>
             </React.Fragment>
             ) })}
-  </article>
+    </article>
+  </div>
   ) 
 }
 

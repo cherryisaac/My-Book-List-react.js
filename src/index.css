@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --cyan: #21e2f3;
+  --white: #fff;
+  --black: #000;
+
+  --slider: .4s;
+}
+
 .header {
   border: 1px rgb(0, 0, 0);
   border-radius: 1px;
@@ -19,10 +27,8 @@ body {
 }
 
 
-
 /* Title style */
 h1 {
-  color: rgb(0, 3, 0);
   font-family:Georgia, 'Times New Roman', Times, serif ;
   font-size: 20px;
   justify-content: center;
@@ -37,7 +43,6 @@ h3 {
   /* font-weight: 400; */
   appearance: inherit;
   font-display:initial;
-  /* color: rgb(255, 123, 0); */
 }
 
 .booklist {
@@ -63,7 +68,7 @@ h3 {
 }
 
 .book {
-  background: #fff;
+  background: var(--white);
   /* background: content-box radial-gradient(rgb(232, 118, 118), rgb(60, 61, 61)); */
   border-radius: 10px;
   padding: 1rem 2rem;
@@ -74,7 +79,7 @@ h3 {
   opacity: .95; /* Background transparency */
 }
 
-section .booklist {
+div .booklist {
   display: grid;
   grid-template-columns: 2;
   margin-bottom: 20px;
@@ -83,7 +88,7 @@ section .booklist {
 .btn {
     display: flex;
     margin-right: 0px;
-    background: #000;
+    background: var(--black);
       color: rgb(242, 241, 241);
     border: 0.5mm solid;
       padding: 10px 20px;
@@ -106,7 +111,7 @@ section .booklist {
 
 .bttn:hover {
 background: red;
-color: #000;
+color: var(--black);
 border-radius: 5px;
 border-style: outset;
 border: 0.5mm solid;
@@ -125,8 +130,8 @@ font-weight:bolder;
 }
 
 .btttn{
-background: #000;
-color: #fff;
+background: var(--black);
+color: var(--white);
   border: 0.4mm solid;
   border-radius: 5px;
   font-size: 15px;
@@ -148,11 +153,10 @@ color: #fff;
 }
 
 .description {
-  color: rgb(0, 0, 0);
   font-family: Italic;
   font-size: 20px;
   overflow: auto;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid var(--white);
   padding: 10px;
   display: grid;
   grid-template-columns: 185px;
@@ -233,8 +237,8 @@ color: #fff;
 /* Bg and text color change on button press*/
 .light {
   /* background-color: white; */
-  border: 1px solid #21e2f3;
-  color: rgb(255, 255, 255);
+  border: 1px solid var(--cyan);
+  color: var(--white);
   background-image: url("../src/Images/blue-fire.gif");
   background-size: cover;
   background-position:bottom;
@@ -242,7 +246,7 @@ color: #fff;
 
 /* Form color change on button press*/
 .light > .add-form {
-  border: 1px solid #21e2f3;
+  border: 1px solid var(--cyan);
 }
 
 /* Delete button orientation on theme switch */
@@ -261,7 +265,7 @@ color: #fff;
 
 .bttn.light:hover {
   background: #de109d;
-  color: #ffffff;
+  color: var(--white);
   font-size: 15;
   font-weight: bolder;
   background-position: top;
@@ -275,8 +279,8 @@ color: #fff;
 .btn.dark {
   display: flex;
     margin-right: 0px;
-    background: #000;
-    color: rgb(242, 241, 241);
+    background: var(--black);
+    color: var(--white);
     border: 0.5mm solid;
     padding: 10px 20px;
     /* border-radius: 5px; */
@@ -289,14 +293,14 @@ color: #fff;
   display: flex;
     margin-right: 0px;
     background: rgb(255, 0, 0);
-    color: rgb(242, 241, 241);
+    color: var(--white);
     border: 0.5mm solid;
     padding: 10px 20px;
     /* border-radius: 5px; */
     cursor: pointer;
     font-size: 15px;
     font-family: inherit;
-  border-color: #21e2f3;
+  border-color: var(--cyan);
 }
 
 /* Hide default HTML checkbox */
@@ -315,8 +319,8 @@ color: #fff;
   right: 0;
   bottom: 0;
   background-color: #2196F3;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: var(--slider);
+  transition: var(--slider);
 }
 
 .slider:before {
@@ -326,13 +330,13 @@ color: #fff;
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: var(--white);
+  -webkit-transition: var(--slider);
+  transition: var(--slider);
 }
 
 input:checked+.slider {
-  background-color: #fefefe;
+  background-color: var(--white);
 }
 
 input:checked+.slider:hover {
@@ -340,7 +344,7 @@ input:checked+.slider:hover {
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px #000000;
+  box-shadow: 0 0 1px var(--black);
 }
 
 input:checked+.slider:before {
