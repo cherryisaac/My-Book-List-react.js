@@ -9,3 +9,8 @@ Functions:
 
 Bugs:
 - None
+
+TODOs:
+- Create loading screen
+- Footer credit
+- Figure out how to change book background image when switching to Night mode
