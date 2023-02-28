@@ -14,3 +14,4 @@ TODOs:
 - Create loading screen
 - Footer credit
 - Figure out how to change book background image when switching to Night mode
+- Adjust image to a fixed size when adding a new book
