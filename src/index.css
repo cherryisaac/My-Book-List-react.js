@@ -22,13 +22,15 @@
 body {
   padding: 0px; 
   font-family: sans-serif;
-  background-image: url("../src/Images/image.png");
+  background-image: url("../src/Images/books.png");
   background-size: contain;
 }
 
  .darkmode {
+  padding: 0px;
+    font-family: sans-serif;
   background-size: contain;
-  background-image: url("../src/Images/stars-galaxy.gif");
+  background-image: url("../src/Images/books-night-mode.png");
 }
 
 /* Title style */
