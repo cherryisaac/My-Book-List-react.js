@@ -27,10 +27,14 @@ body {
 }
 
  .darkmode {
-  padding: 0px;
-    font-family: sans-serif;
   background-size: contain;
   background-image: url("../src/Images/books-night-mode.png");
+}
+
+.library-load {
+  background-size: contain;
+  background-position: 45%;
+  background-image: url("../src/Images/loading....gif");
 }
 
 /* Title style */
@@ -59,7 +63,11 @@ h3 {
   gap: 40%;
   justify-content: space-evenly;
   text-align: var(--align);
-  /* margin-block: 20px; */
+  /*loading screen centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -70,6 +78,10 @@ h3 {
     "block"
     "block"; */
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
 
@@ -399,6 +411,3 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-
-

@@ -3,7 +3,29 @@ import AddBook from "./AddBook";
 import React from 'react';
 
 function Book() {
+  //Prompt to change theme
+  const [isDark, setIsDark] = useState(true);
 
+  const handleThemeChange = () => {
+    setIsDark(!isDark);
+  }
+
+  //Chamge background when dark
+  useEffect(() => {
+    if (isDark !== null) {
+      document.body.classList.toggle("darkmode", !isDark);
+    }
+  }, [!isDark]);
+
+  const isLoading = true;
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.classList.toggle("library-load");
+    }
+  }, []);
+
+  //Button to reveal option to add a book
   const Button = ({ color, text, onClick }) => {
   return (<button onClick={onClick} 
     style={{backgroundColor: color}} 
@@ -17,21 +39,6 @@ function Book() {
     </header>
   )
 }
-
-
-//Prompt to change theme
-const [isDark, setIsDark] = useState(true);
-
-const handleThemeChange = () => {
-  setIsDark(!isDark);
-}
-
-//Chamge background when dark
-  useEffect(() => {
-    if (isDark !== null) {
-      document.body.classList.toggle("darkmode", !isDark);
-    }
-  }, [!isDark]);
 
   //Hide book add by default (useState set to false)
   const [showBook, setShowBook] = useState
@@ -61,15 +68,6 @@ const handleThemeChange = () => {
    description: 'In this book summary on How to Win Friends and Influence People in the Digital Age, we’ll review ideas from the original book, with tips on how to apply them in today’s digital age, so you can stand out as a leader and build rich, trusting and lasting relationships.'
 }
 ])
-
-// Main Bookcase background change...not sure how to make it work correctly
-const [backgroundImage, setBackgroundImage] = useState("image.png");
-
-  function handleChangeBackground() {
-    setIsDark(!isDark);
-    setBackgroundImage(backgroundImage ===
-      '../src/Images/starts-galaxy.gif' ? '../src/Images/images.png' : '../src/Images/starts-galaxy.gif');
-  }
 
 //To delete a book
   const removeItem = (id) => {

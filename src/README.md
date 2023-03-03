@@ -11,6 +11,5 @@ Bugs:
 - None
 
 TODOs:
-- Create loading screen
 - Footer credit
 - Adjust image to a fixed size when adding a new book
