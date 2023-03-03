@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddBook from "./AddBook";
 import React from 'react';
 
 function Book() {
 
   const Button = ({ color, text, onClick }) => {
-    
   return (<button onClick={onClick} 
     style={{backgroundColor: color}} 
     className={`btn ${isDark ? 'dark' : 'light'}`}  >{text} </button>)
@@ -25,8 +24,14 @@ const [isDark, setIsDark] = useState(true);
 
 const handleThemeChange = () => {
   setIsDark(!isDark);
-  // setTheme(theme === 'Dark Theme' ? 'Light Theme' : 'Dark Theme');
 }
+
+//Chamge background when dark
+  useEffect(() => {
+    if (isDark !== null) {
+      document.body.classList.toggle("darkmode", !isDark);
+    }
+  }, [!isDark]);
 
   //Hide book add by default (useState set to false)
   const [showBook, setShowBook] = useState
@@ -87,7 +92,7 @@ const addBookkId = (someBook) => {
   }
   
   return (
-  <div className='booklist'>
+  <div className='booklist' key={book.id}>
     <article className={`book ${isDark ? 'dark' : 'light'}`} >
     <Header onAdd={() => setShowBook(!showBook)}
       showAdd={showBook} />
@@ -104,7 +109,7 @@ const addBookkId = (someBook) => {
            
             return (
             <React.Fragment >
-            <div key={id} id= 'container'>
+            <div id= 'container' key={id}>
                 <h1>{}</h1>
                 {descriptionVisible ? <p className="description flip2" style={{color: !isDark ? "rgb(0, 255, 255, 0.9)" : "black", fontWeight: !isDark ? 'bold' : "inherit",
                 borderColor: !isDark ? "white" : "black", backgroundColor: !isDark ? "rgb(0, 0, 0, 0.7)" : "rgb(255, 255, 255, 0.8)"}} 

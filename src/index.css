@@ -26,6 +26,11 @@ body {
   background-size: contain;
 }
 
+ .darkmode {
+  background-size: contain;
+  background-image: url("../src/Images/stars-galaxy.gif");
+}
+
 /* Title style */
 h1 {
   font-family:Georgia, 'Times New Roman', Times, serif ;
@@ -385,7 +390,6 @@ input:checked+.slider:before {
 }
 
 /* Rounded sliders */
-
 .slider.round {
   border-radius: 34px;
 }
