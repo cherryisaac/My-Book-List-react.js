@@ -12,6 +12,12 @@
   --slider: .4s;
   --cursor: pointer;
   --align: center;
+
+  --gutter-huge: 12rem;
+  --gutter-medium: 6rem;
+  --gutter-normal: 3rem;
+  --gutter-small-1: 2.5rem;
+  --gutter-small: 2rem;
 }
 
 .header {
@@ -410,4 +416,11 @@ input:checked+.slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+footer{
+  color: var(--white);
+  margin-top: -360px;
+  text-align: center;
+  padding: var(--gutter-medium) 0 var(--gutter-normal);
 }

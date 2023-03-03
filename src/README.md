@@ -11,5 +11,4 @@ Bugs:
 - None
 
 TODOs:
-- Footer credit
 - Adjust image to a fixed size when adding a new book

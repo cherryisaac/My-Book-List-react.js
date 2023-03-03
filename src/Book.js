@@ -126,6 +126,11 @@ const addBookkId = (someBook) => {
             </React.Fragment>
             ) })}
     </article>
+      <footer style={{ color: !isDark ? "white" : "white", fontWeight: !isDark ? 'inherit' : "lighter",
+        textShadow: !isDark ? "" : "-0.5px 0 green, 0 0.5px green, 0.5px 0 green, 0 -0.5px green"
+        }}>
+        &copy; Copyright. All rights reserved. Created by Isaac Cherry
+    </footer>
   </div>
   ) 
 }
