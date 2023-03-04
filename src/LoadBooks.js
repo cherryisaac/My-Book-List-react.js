@@ -6,13 +6,12 @@ import ReactLoading from "react-loading";
 
 function LoadBooks() {
     const [isLoading, setIsLoading] = useState(true);
-    const [done, setDone] = useState(undefined)
 
     useEffect(() => {
-        // Simulate loading data
+        // Loading screen timer 1 second
         setTimeout(() => {
             setIsLoading(false);
-        }, 2000);
+        }, 1000);
     }, []);
 
     const setLoading = () => {
@@ -29,13 +28,6 @@ function LoadBooks() {
             </>
         );
     };
-
-    useEffect(() => {
-        if (isLoading !== null) {
-            document.body.classList.toggle("loading", !isLoading);
-        }
-    }, [!isLoading]);
-
 
   return (
       <div className={`booklist ${isLoading ? "loading" : ""}`}>

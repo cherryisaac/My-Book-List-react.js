@@ -418,9 +418,20 @@ input:checked+.slider:before {
   border-radius: 50%;
 }
 
+/*The space between each book */
+#container {
+  margin-bottom: 10px;
+}
+
+/*Ensures each book image size scales to each other */
+.book-image {
+  width: 250px;
+  height: 375px;
+}
+
 footer{
   color: var(--white);
-  margin-top: -360px;
+  margin-top: -370px;
   text-align: center;
   padding: var(--gutter-medium) 0 var(--gutter-normal);
 }

@@ -1,5 +1,7 @@
 My Booklist by Isaac Cherry
 
+
+
 Functions:
 - Can add books
 - Can delete books
@@ -11,4 +13,4 @@ Bugs:
 - None
 
 TODOs:
-- Adjust image to a fixed size when adding a new book
+- None

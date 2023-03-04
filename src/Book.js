@@ -112,7 +112,7 @@ const addBookkId = (someBook) => {
                 {descriptionVisible ? <p className="description flip2" style={{color: !isDark ? "rgb(0, 255, 255, 0.9)" : "black", fontWeight: !isDark ? 'bold' : "inherit",
                 borderColor: !isDark ? "white" : "black", backgroundColor: !isDark ? "rgb(0, 0, 0, 0.7)" : "rgb(255, 255, 255, 0.8)"}} 
                 onClick={()=>toggleBook(id)}>{description}</p> :
-                    <img className="flip" src={img} onClick={() => toggleBook(id)} alt="" style={{
+                    <img className="flip book-image" src={img} onClick={() => toggleBook(id)} alt="" style={{
                       color: !isDark ? "dark" : "light"}} />}
                 <h1 style={{color: !isDark ? "white" : "black", textShadow: !isDark ? "0 0 3px #FF0000, 0 0 5px #0000FF" : ""}}>{title}</h1>
                 <h3 style={{color: !isDark ? "coral" : "black", fontFamily: !isDark ? "fantasy" : "",
