@@ -431,7 +431,7 @@ input:checked+.slider:before {
 
 footer{
   color: var(--white);
-  margin-top: -370px;
+  margin-top: -410px;
   text-align: center;
   padding: var(--gutter-medium) 0 var(--gutter-normal);
 }
