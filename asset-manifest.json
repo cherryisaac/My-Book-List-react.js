@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/My-Book-List-react.js/static/css/main.f5135bba.css",
-    "main.js": "/My-Book-List-react.js/static/js/main.ddb81985.js",
+    "main.css": "/My-Book-List-react.js/static/css/main.f8498431.css",
+    "main.js": "/My-Book-List-react.js/static/js/main.aee4cc53.js",
     "static/media/books-night-mode.png": "/My-Book-List-react.js/static/media/books-night-mode.1d4297ef8ab2ff8cbd67.png",
     "static/media/blue-fire.gif": "/My-Book-List-react.js/static/media/blue-fire.ac2be4d2d81217f0abe9.gif",
     "static/media/loading....gif": "/My-Book-List-react.js/static/media/loading....aa4f1ad392b89dbe6f68.gif",
     "static/media/books.png": "/My-Book-List-react.js/static/media/books.37d29bf5c6046b69edb6.png",
     "index.html": "/My-Book-List-react.js/index.html",
-    "main.f5135bba.css.map": "/My-Book-List-react.js/static/css/main.f5135bba.css.map",
-    "main.ddb81985.js.map": "/My-Book-List-react.js/static/js/main.ddb81985.js.map"
+    "main.f8498431.css.map": "/My-Book-List-react.js/static/css/main.f8498431.css.map",
+    "main.aee4cc53.js.map": "/My-Book-List-react.js/static/js/main.aee4cc53.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5135bba.css",
-    "static/js/main.ddb81985.js"
+    "static/css/main.f8498431.css",
+    "static/js/main.aee4cc53.js"
   ]
 }
