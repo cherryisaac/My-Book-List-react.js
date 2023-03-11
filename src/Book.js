@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AddBook from "./AddBook";
-import React from 'react';
+import Books from './Books';
 
 function Book() {
   //Prompt to change theme
@@ -15,7 +15,7 @@ function Book() {
     if (isDark !== null) {
       document.body.classList.toggle("darkmode", !isDark);
     }
-  }, [!isDark]);
+  }, [!isDark, isDark]);
 
   const isLoading = true;
 
@@ -23,7 +23,7 @@ function Book() {
     if (isLoading) {
       document.body.classList.toggle("library-load");
     }
-  }, []);
+  }, [isLoading]);
 
   //Button to reveal option to add a book
   const Button = ({ color, text, onClick }) => {
@@ -44,43 +44,21 @@ function Book() {
   const [showBook, setShowBook] = useState
   (false)  
   //For changing state such as deleting a book
-  const [book, setBook] = useState([{
-  id: 1,
-  img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlkk-L1KiG7ca0hK9_uEefpx3f5KhI2E4h7w&usqp=CAU',
-  // img: 'https://images-na.ssl-images-amazon.com/images/I/91-EIJiYneL._AC_UL604_SR604,400_.jpg',
-  title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
-  author: 'James Clear',
-  description: 'Atomic Habits (2018) provides a practical and proven framework for creating good habits and shedding bad ones. Drawing on scientific research and real-life examples, it shows how tiny changes in behavior can result in the formation of new habits and help you achieve big things.'
-}, {
-  id: 2,
-  img: 'https://images-na.ssl-images-amazon.com/images/I/41QmmZs4UxL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-  title: 'Life Force: How New Breakthroughs in Precision Medicine Can Transform the Quality of Your Life & Those You Love',
-  author: 'Tony Robbins',
-  description: 'This is a book for everyone, from peak performance athletes, to the average person who wants to increase their energy and strength, to those looking for healing. Life Force provides answers that can transform and even save your life, or that of someone you love.'
-},
- {
-   id: 3,
-  // img: 'https://images-na.ssl-images-amazon.com/images/I/619Gn-+VNQL._AC_UL302_SR302,200_.jpg',
-   img: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347752011l/12469670.jpg',
-  title: 'How to Win Friends & Influence People',
-  author: 'Dale Carnegie',
-  // description: 'This book teaches you countless principles to become a likable person, handle your relationships well, win others over and help them change their behavior without being intrusive.'
-   description: 'In this book summary on How to Win Friends and Influence People in the Digital Age, we’ll review ideas from the original book, with tips on how to apply them in today’s digital age, so you can stand out as a leader and build rich, trusting and lasting relationships.'
-}
-])
+  const [book, setBook] = useState(Books)
 
-//To delete a book
+
+  //To delete a book
   const removeItem = (id) => {
      setBook(book.filter((someBook) => someBook.id !== id))
   }
 
-//Add Task with random id
-const addBookkId = (someBook) => {
+  //Add book with random id
+  const addBookkId = (someBook) => {
   const id =Math.floor(Math.random() * 10000) + 1;
     console.log(someBook)
 
-  const newTask = { id, ...someBook }
-  setBook([...book, newTask])
+  const newBook = { id, ...someBook }
+  setBook([...book, newBook])
   }
 
   const toggleBook = (id) => {
@@ -91,7 +69,7 @@ const addBookkId = (someBook) => {
   
   return (
   <div className='booklist' key={book.id}>
-    <article className={`book ${isDark ? 'dark' : 'light'}`} >
+    <article className={`book ${isDark ? 'dark' : 'light'}`}>
     <Header onAdd={() => setShowBook(!showBook)}
       showAdd={showBook} />
       {showBook && <AddBook onAdd = {addBookkId} />}
@@ -102,7 +80,15 @@ const addBookkId = (someBook) => {
           <span className="slider round"></span>
         </label>
       </div>
-        {book.map((booking) => {
+        {book.length === 0 ? (
+          <div className="btttn">
+          <h2 className="txt" style={{backgroundColor: !isDark ? "black" : "white"}}>No books left</h2>
+            <button className={` btn2 reset ${!isDark ? 'dark' : 'light'}`} 
+            // style={{color: !isDark ? "cyan" : "black", backgroundColor: !isDark ? "black" : "gray"}} 
+          onClick={() => setBook(Books)}>refresh</button>
+          </div>
+        ) : (
+        book.map((booking) => {
            const {id, img, title, author, description, descriptionVisible} = booking;
            
             return (
@@ -114,9 +100,12 @@ const addBookkId = (someBook) => {
                 onClick={()=>toggleBook(id)}>{description}</p> :
                     <img className="flip book-image" src={img} onClick={() => toggleBook(id)} alt="" style={{
                       color: !isDark ? "dark" : "light"}} />}
-                <h1 style={{color: !isDark ? "white" : "black", textShadow: !isDark ? "0 0 3px #FF0000, 0 0 5px #0000FF" : ""}}>{title}</h1>
-                <h3 style={{color: !isDark ? "coral" : "black", fontFamily: !isDark ? "fantasy" : "",
-              textShadow: !isDark ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black" : ""}}>{author}</h3>
+                <h1 style={{color: !isDark ? "white" : "black", textShadow: !isDark ? "0 0 3px #FF0000, 0 0 5px #0000FF" : "",
+                    fontWeight: !isDark ? '' : "bold",}}>{title}</h1>
+                  <h3 className="author" style={{
+                    color: !isDark ? "coral" : "black", fontFamily: !isDark ? "fantasy" : "bold",
+                    textShadow: !isDark ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black" :
+                     ""}}>{author}</h3>
                 <h1>{}</h1>
                   <button className={`bttn ${isDark ? 'dark' : 'light'}`} 
                         onClick={() => removeItem(id)}>
@@ -124,7 +113,7 @@ const addBookkId = (someBook) => {
                   </button>
             </div>
             </React.Fragment>
-            ) })}
+            ) }))}
     </article>
       <footer style={{ color: !isDark ? "white" : "white", fontWeight: !isDark ? 'inherit' : "lighter",
         textShadow: !isDark ? "" : "-0.5px 0 green, 0 0.5px green, 0.5px 0 green, 0 -0.5px green"
@@ -136,4 +125,3 @@ const addBookkId = (someBook) => {
 }
 
 export default Book
-

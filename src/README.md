@@ -13,4 +13,7 @@ Bugs:
 - None
 
 TODOs:
-- None
+- Change background to black when all books are deleted (instead of fire background)
+
+Bonus:
+- Add paragraph generator or some sort of fetch API that can fill-in the data automatically online based off the title and author

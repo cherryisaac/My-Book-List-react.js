@@ -65,7 +65,7 @@ h3 {
   width: 90ww;
   max-width: 1170px;
   margin: 5rem auto;
-  display: grid;
+  /* display: grid; */
   gap: 40%;
   justify-content: space-evenly;
   text-align: var(--align);
@@ -150,16 +150,6 @@ font-weight:bolder;
     font-size: 15px;
     font-family: inherit;
     cursor: var(--cursor);
-}
-
-.btttn{
-background: var(--black);
-color: var(--white);
-  border: 0.4mm solid;
-  border-radius: 5px;
-  font-size: 15px;
-  font-family: inherit;
-  cursor: var(--cursor);
 }
 
 /* Form box wrapper */
@@ -424,9 +414,93 @@ input:checked+.slider:before {
 }
 
 /*Ensures each book image size scales to each other */
-.book-image {
+.book-image, .book-image.light, .book-image.dark {
   width: 250px;
   height: 375px;
+}
+
+h2 > button.reset {
+  background-color: red;
+  display: flex; 
+  justify-content: start;
+  align-items: start;
+  text-align: end;
+}
+
+/* Button orientation and text when no books are left */
+.btn2.light {
+  margin-right: 0px;
+  background: gray;
+  color: var(--black);
+  border: 0.5mm solid;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  border-color: var(--black)
+}
+
+.btn2.light:hover {
+  margin-right: 0px;
+  background: orange;
+  color: var(--black);
+  border: 0.5mm solid;
+  padding: 10px 20px;
+  cursor: var(--cursor);
+  font-size: 15px;
+  font-family: inherit;
+  border-color: var(--black);
+  /* font-weight: bold; */
+}
+
+.btn2.dark {
+  margin-right: 0px;
+  background: var(--black);
+  color: var(--white);
+  border: 0.5mm solid;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  border-color: var(--white)
+}
+
+.btn2.dark:hover {
+  margin-right: 0px;
+  background: #4e10de;
+  color: var(--white);
+  border: 0.5mm solid;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  border-color: var(--white);
+  /* font-weight: bolder; */
+}
+
+.btttn.light.dark{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "book", 
+  "button button button";
+  /* justify-content: center; */
+}
+
+.txt {
+grid-area: book;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+margin-top: 10px;
+}
+
+.btn2 {
+  grid-area: button;
+  display: flexbox;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 footer{
