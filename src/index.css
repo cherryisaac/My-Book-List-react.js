@@ -294,6 +294,11 @@ font-weight:bolder;
 .night {
   background-color: #000;
   border: 1px solid var(--cyan);
+  color: white;
+}
+
+.night > .add-form {
+  border: 1px solid var(--cyan);
 }
 
 /* Form color change on button press*/
@@ -460,27 +465,21 @@ h2 > button.reset {
 }
 
 .btn2.dark {
-  margin-right: 0px;
-  background: var(--black);
+  background: #4e10de;
   color: var(--white);
-  border: 0.5mm solid;
   padding: 10px 20px;
   font-size: 15px;
-  font-family: inherit;
   border-color: var(--white)
 }
 
 .btn2.dark:hover {
-  margin-right: 0px;
-  background: #4e10de;
+  /* background: #4e10de; */
   color: var(--white);
-  border: 0.5mm solid;
   padding: 10px 20px;
   font-size: 15px;
-  font-family: inherit;
   border-color: var(--white);
   cursor: pointer;
-  /* font-weight: bolder; */
+  font-weight: bolder;
 }
 
 .btttn.light.dark{

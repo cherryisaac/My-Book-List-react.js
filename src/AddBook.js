@@ -48,7 +48,7 @@ const AddBook = ({onAdd}) => {
       </div>
         <input type='submit' value='Save Book' className="bttn2 btttn btttn-dark" />
     </form>
-  )
+  ) 
 }
 
 export default AddBook
