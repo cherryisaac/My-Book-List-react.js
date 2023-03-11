@@ -1,7 +1,5 @@
 My Booklist by Isaac Cherry
 
-
-
 Functions:
 - Can add books
 - Can delete books
@@ -13,7 +11,7 @@ Bugs:
 - None
 
 TODOs:
-- Change background to black when all books are deleted (instead of fire background)
+- None
 
 Bonus:
 - Add paragraph generator or some sort of fetch API that can fill-in the data automatically online based off the title and author

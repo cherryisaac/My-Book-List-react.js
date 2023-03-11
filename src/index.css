@@ -290,6 +290,12 @@ font-weight:bolder;
   background-position:bottom;
 }
 
+/* Bg when books are equal to zero */
+.night {
+  background-color: #000;
+  border: 1px solid var(--cyan);
+}
+
 /* Form color change on button press*/
 .light > .add-form {
   border: 1px solid var(--cyan);
@@ -430,18 +436,19 @@ h2 > button.reset {
 /* Button orientation and text when no books are left */
 .btn2.light {
   margin-right: 0px;
-  background: gray;
-  color: var(--black);
+  background: orange;
+  color: var(--ora);
   border: 0.5mm solid;
   padding: 10px 20px;
   font-size: 15px;
   font-family: inherit;
-  border-color: var(--black)
+  border-color: var(--black);
+  /* font-weight: bold; */
 }
 
 .btn2.light:hover {
-  margin-right: 0px;
-  background: orange;
+  /* margin-right: 0px; */
+  /* background: orange; */
   color: var(--black);
   border: 0.5mm solid;
   padding: 10px 20px;
@@ -449,7 +456,7 @@ h2 > button.reset {
   font-size: 15px;
   font-family: inherit;
   border-color: var(--black);
-  /* font-weight: bold; */
+  font-weight: bold;
 }
 
 .btn2.dark {
@@ -472,6 +479,7 @@ h2 > button.reset {
   font-size: 15px;
   font-family: inherit;
   border-color: var(--white);
+  cursor: pointer;
   /* font-weight: bolder; */
 }
 
@@ -482,7 +490,6 @@ h2 > button.reset {
   grid-template-areas: 
   "book", 
   "button button button";
-  /* justify-content: center; */
 }
 
 .txt {

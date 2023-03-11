@@ -69,7 +69,8 @@ function Book() {
   
   return (
   <div className='booklist' key={book.id}>
-    <article className={`book ${isDark ? 'dark' : 'light'}`}>
+    <article className={`book ${!isDark && book.length === 0 ? 'night' : 
+    !isDark && book.length != 0 ? 'light' : 'dark'}`}>
     <Header onAdd={() => setShowBook(!showBook)}
       showAdd={showBook} />
       {showBook && <AddBook onAdd = {addBookkId} />}
@@ -82,9 +83,8 @@ function Book() {
       </div>
         {book.length === 0 ? (
           <div className="btttn">
-          <h2 className="txt" style={{backgroundColor: !isDark ? "black" : "white"}}>No books left</h2>
+          <h2 className="txt" style={{backgroundColor: !isDark ? "black" : "white", color: !isDark ? "white" : "black"}}>No books left</h2>
             <button className={` btn2 reset ${!isDark ? 'dark' : 'light'}`} 
-            // style={{color: !isDark ? "cyan" : "black", backgroundColor: !isDark ? "black" : "gray"}} 
           onClick={() => setBook(Books)}>refresh</button>
           </div>
         ) : (
