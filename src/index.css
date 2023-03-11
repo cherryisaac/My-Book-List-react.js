@@ -28,13 +28,13 @@
 body {
   padding: 0px; 
   font-family: sans-serif;
-  background-image: url("../src/Images/books.png");
-  background-size: contain;
+  background-image: url("../src/Images/books-enhanced.jpg");
+  background-size: cover;
 }
 
  .darkmode {
-  background-size: contain;
-  background-image: url("../src/Images/books-night-mode.png");
+  background-image: url("../src/Images/books-night-mode-enhanced.jpg");
+    background-size: cover;
 }
 
 .library-load {
@@ -511,7 +511,7 @@ margin-top: 10px;
 
 footer{
   color: var(--white);
-  margin-top: -410px;
+  margin-top: -390px;
   text-align: center;
   padding: var(--gutter-medium) 0 var(--gutter-normal);
 }
