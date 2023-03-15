@@ -1,3 +1,4 @@
+//@ts-check
 import React, { useState, useEffect } from "react";
 import AddBook from "./AddBook";
 import Books from './Books';
@@ -61,14 +62,14 @@ function Book() {
   setBook([...book, newBook])
   }
 
-  const toggleBook = (id) => {
+  const toggleBook = (/** @type {number} */ id) => {
      setBook(book.map((books) => books.id === id ?
     { ...books, descriptionVisible : !books.descriptionVisible } : books))
     // console.log(id)
   }
   
   return (
-  <div className='booklist' key={book.id}>
+  <div className='booklist' >
     <article className={`book ${!isDark && book.length === 0 ? 'night' : 
     !isDark && book.length != 0 ? 'light' : 'dark'}`}>
     <Header onAdd={() => setShowBook(!showBook)}

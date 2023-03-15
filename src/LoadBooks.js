@@ -1,3 +1,4 @@
+//@ts-check
 import { useState, useEffect } from "react";
 import React from 'react'
 import Book from './Book';
@@ -22,8 +23,9 @@ function LoadBooks() {
         return (
             <>
                 {isLoading ? (
-                    <ReactLoading type={"bars"} color="green" height={0} width={0} 
-                             {...document.body.classList.toggle("library-load")} />
+                    // <ReactLoading type={"bars"} color="green" height={100} width={100} 
+                             document.body.classList.toggle("library-load")
+                            //   />
                 ) : (
                     <div>
                         <Book />

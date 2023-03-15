@@ -1,3 +1,5 @@
+//@ts-check
+import React from "react"
 import { useState } from "react"
 
 const AddBook = ({onAdd}) => {
@@ -43,6 +45,7 @@ const AddBook = ({onAdd}) => {
         <div className="form-control-img">
     <label>Book Image</label>
     <input type="file" placeholder="Upload Image" onChange={e => 
+      // @ts-ignore
       setImage(URL.createObjectURL(e.target.files[0]))} />
     <img src={img} alt="Uploaded Image" height="200" width="200" />
       </div>
